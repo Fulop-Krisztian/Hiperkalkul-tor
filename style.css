@@ -1,0 +1,25 @@
+body {
+    background-color: whitesmoke;
+  }
+.card {
+  border-radius: 20px;
+}
+div.card {
+  background-color: whitesmoke;
+}
+.btn {
+  background-color: whitesmoke;
+  color: gray;
+}
+input {
+  text-align: right;
+}
+div.input-group.mb-3 input:enabled:hover {
+  background-color: whitesmoke;
+}
+h2 {
+  margin: 10px;
+}
+div.input-group-append {
+  width: 50px;
+}

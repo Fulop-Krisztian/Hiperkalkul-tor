@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="aSzámolás.js"></script>
+    <script src="nighttheme.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css" id="style" />
+    <title>oldal</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!--Téglalap (t)-->
+        <div class="col-sm-6 col-md-6 col-xl-3">
+          <div class="card text-center bg">
+            <h2 class="card-title text-center">Téglalap</h2>
+            <img
+              src="Images/téglalap.png"
+              class="card-img-bottom"
+              alt="téglalap"
+            />
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"a" oldal</span>
+                </div>
+                <input
+                  oninput="tSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="tA"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"b" oldal</span>
+                </div>
+                <input
+                  oninput="tSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="tB"
+                  min="0"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Kerület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tKerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Terület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tTerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>2</sup></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Hatszög (h)-->
+        <div class="col-sm-6 col-md-6 col-xl-3">
+          <div class="card text-center bg">
+            <h2 class="card-title text-center">Hatszög</h2>
+            <img
+              src="Images/hatszög.png"
+              class="card-img-bottom"
+              alt="hatszög"
+            />
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"a" oldalak</span>
+                </div>
+                <input
+                  oninput="hSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="hA"
+                  min="0"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Kerület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="hKerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Terület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="hTerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>2</sup></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--TéglaTest (tt)-->
+        <div class="col-sm-6 col-md-6 col-xl-3">
+          <div class="card text-center bg" style="border-radius: 20px">
+            <h2 class="card-title text-center">Téglatest</h2>
+            <img
+              src="Images/téglatest.png"
+              class="card-img-bottom"
+              alt="téglatest"
+            />
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"a" oldal</span>
+                </div>
+                <input
+                  oninput="ttSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="ttA"
+                  min="0"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"b" oldal</span>
+                </div>
+                <input
+                  oninput="ttSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="ttB"
+                  min="0"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"c" oldal</span>
+                </div>
+                <input
+                  oninput="ttSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="ttC"
+                  min="0"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Felület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ttFelEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>2</sup></span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Térfogat</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ttTerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>3</sup></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Szabályos gúla-->
+        <div class="col-sm-6 col-md-6 col-xl-3">
+          <div class="card text-center bg" style="border-radius: 20px">
+            <h2 class="card-title text-center">Négyzet alapú gúla</h2>
+            <img
+              src="Images/gúla.png"
+              class="card-img-bottom"
+              alt="négyzet alapú gúla"
+            />
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"a" oldal</span>
+                </div>
+                <input
+                  oninput="gSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="gA"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">"s" oldal</span>
+                </div>
+                <input
+                  oninput="gSzamol()"
+                  type="text"
+                  class="form-control"
+                  id="gB"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm</span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Felület</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gFelEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>2</sup></span>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Térfogat</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gTerEred"
+                  disabled
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">cm<sup>3</sup></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-sm" onclick="nightvision()">
+        Night vision
+      </button>
+    </div>
+  </body>
+</html>

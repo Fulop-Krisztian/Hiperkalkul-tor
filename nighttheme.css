@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+}
+.card {
+  border-radius: 20px;
+}
+div.card {
+  background-color: gray;
+}
+.btn {
+  background-color: black;
+  color: white;
+}
+input {
+  text-align: right;
+}
+div.input-group.mb-3 input:enabled:hover {
+  background-color: whitesmoke;
+}
+h2 {
+  margin: 10px;
+}
+img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+div.input-group-append {
+    width: 50px;
+  }
+  
