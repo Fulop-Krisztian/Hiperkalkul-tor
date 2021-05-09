@@ -5,8 +5,13 @@ function tSzamol() {
   if (tA <= 0 || tB <= 0) {
     document.getElementById("tTerEred").value = "Hiba".toLocaleString();
     document.getElementById("tKerEred").value = "Hiba".toLocaleString();
-    audio3.play();
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
+    if (tA <= 0) {
+      document.getElementById("tA").value = "".toString();
+    }
+    if (tB <= 0) {
+      document.getElementById("tB").value = "".toString();
+    }
   } else {
     if (tA == 30) {
       var audio1 = new Audio("Temp/Wololo.mp3");
@@ -25,12 +30,16 @@ function hSzamol() {
     document.getElementById("hTerEred").value = "Hiba".toLocaleString();
     document.getElementById("hKerEred").value = "Hiba".toLocaleString();
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
-  }
-  var hTer = (((Math.sqrt(3) * 3) / 2) * hA * hA).toFixed(2);
-  var hKer = (hA * 6).toFixed(2);
+    if (hA <= 0) {
+      document.getElementById("hA").value = "".toString();
+    }
+  } else {
+    var hTer = (((Math.sqrt(3) * 3) / 2) * hA * hA).toFixed(2);
+    var hKer = (hA * 6).toFixed(2);
 
-  document.getElementById("hTerEred").value = hTer.toString();
-  document.getElementById("hKerEred").value = hKer.toString();
+    document.getElementById("hTerEred").value = hTer.toString();
+    document.getElementById("hKerEred").value = hKer.toString();
+  }
 }
 
 function ttSzamol() {
@@ -42,6 +51,15 @@ function ttSzamol() {
     document.getElementById("ttFelEred").value = "Hiba".toLocaleString();
     document.getElementById("ttTerEred").value = "Hiba".toLocaleString();
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
+    if (ttA <= 0) {
+      document.getElementById("ttA").value = "".toString();
+    }
+    if (ttB <= 0) {
+      document.getElementById("ttB").value = "".toString();
+    }
+    if (ttC <= 0) {
+      document.getElementById("ttC").value = "".toString();
+    }
   } else {
     var ttF = (2 * (ttA * ttB + ttA * ttC + ttB * ttC)).toFixed(2);
     var ttT = (ttA * ttB * ttC).toFixed(2);
@@ -59,6 +77,12 @@ function gSzamol() {
     document.getElementById("gFelEred").value = "Hiba".toLocaleString();
     document.getElementById("gTerEred").value = "Hiba".toLocaleString();
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
+    if (gA <= 0) {
+      document.getElementById("gA").value = "".toString();
+    }
+    if (gS <= 0) {
+      document.getElementById("gB").value = "".toString();
+    }
   } else {
     var gTa = gA * gA; // Az alap területe a térfogat és felület kiszámításához
     var gTp = (Math.sqrt(gS * gS - (gA / 2) * (gA / 2)) * gA) / 2; // A palást egyik háromszögének a területe a felület kiszámításához
