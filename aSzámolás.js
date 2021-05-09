@@ -1,6 +1,3 @@
-
-var audio1 = new Audio("Temp/Wololo.mp3");
-
 function tSzamol() {
   var tA = parseFloat(document.getElementById("tA").value);
   var tB = parseFloat(document.getElementById("tB").value);
@@ -12,6 +9,7 @@ function tSzamol() {
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
   } else {
     if (tA == 30) {
+      var audio1 = new Audio("Temp/Wololo.mp3");
       audio1.play();
     }
     var tTer = (tA * tB).toFixed(2);
@@ -58,19 +56,17 @@ function gSzamol() {
   var gS = parseFloat(document.getElementById("gB").value);
 
   if (gA <= 0 || gS <= 0) {
-
     document.getElementById("gFelEred").value = "Hiba".toLocaleString();
     document.getElementById("gTerEred").value = "Hiba".toLocaleString();
     alert("Az oldalak hossza nem lehet nulla vagy kisebb");
-
   } else {
+    var gTa = gA * gA; // Az alap területe a térfogat és felület kiszámításához
+    var gTp = (Math.sqrt(gS * gS - (gA / 2) * (gA / 2)) * gA) / 2; // A palást egyik háromszögének a területe a felület kiszámításához
+    var gAa = Math.sqrt(gA * gA + gA * gA); // Az alap átlója a magasság kiszámításához
+    var gM = Math.sqrt(gS * gS - (gAa / 2) * (gAa / 2)); // A gúla magassága a térfogat kiszámításához
 
-    var gTa = gA * gA;                                              // Az alap területe a térfogat és felület kiszámításához
-    var gTp = (Math.sqrt(gS * gS - (gA / 2) * (gA / 2)) * gA) / 2;  // A palást egyik háromszögének a területe a felület kiszámításához
-    var gAa = Math.sqrt(gA * gA + gA * gA);                         // Az alap átlója a magasság kiszámításához
-    var gM = Math.sqrt(gS * gS - (gAa / 2) * (gAa / 2));            // A gúla magassága a térfogat kiszámításához
-    
-    if (gS <= gAa / 2) {                                            // Ha az S oldal egyenlő az alap átlójának felével, vagy annál kisebb, akkor a gúla nem szerkeszthető meg
+    if (gS <= gAa / 2) {
+      // Ha az S oldal egyenlő az alap átlójának felével, vagy annál kisebb, akkor a gúla nem szerkeszthető meg
       document.getElementById(
         "gFelEred"
       ).value = "Nem szerkeszthető".toLocaleString();
@@ -78,8 +74,8 @@ function gSzamol() {
         "gTerEred"
       ).value = "Az adatokkal".toLocaleString();
     } else {
-      var gF = (gTa + gTp * 4).toFixed(2);                                       // Az alap és a négy háromszög területe összeadva adja meg a felszínt
-      var gT = ((gTa * gM) / 3).toFixed(2);                                      // 
+      var gF = (gTa + gTp * 4).toFixed(2); // Az alap és a négy háromszög területe összeadva adja meg a felszínt
+      var gT = ((gTa * gM) / 3).toFixed(2); // A magasság és az alap területe összeszorozva majd osztva hárommal adja meg a térfogatot
 
       document.getElementById("gFelEred").value = gF.toString();
       document.getElementById("gTerEred").value = gT.toString();
