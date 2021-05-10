@@ -1,6 +1,6 @@
 body {
   background-color: rgb(255, 255, 255);
-  background: url(Images/Background.jpg) no-repeat center fixed;
+  background: url(Images/Background.jpg) repeat center fixed;
 }
 .card {
   border-radius: 20px;
